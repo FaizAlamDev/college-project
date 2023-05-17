@@ -5,6 +5,7 @@ export default function Home() {
     <div className="m-5 flex flex-col p-3 ">
       <Link href="/textSearch">Text</Link>
       <Link href="/imageSearch">Image</Link>
+      <Link href="/weatherSearch">Weather</Link>
     </div>
   );
 }
