@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const api = {
-  key: "8ed2c263f100632d7c40e411b68d2202",
+  key: process.env.NEXT_PUBLIC_WEATHER_API,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
