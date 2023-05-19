@@ -19,7 +19,6 @@ export default function WeatherSearch() {
       <header className="app-header">
         <h1>Weather App</h1>
 
-        {/* SearchBox */}
         <div>
           <input
             type="text"
