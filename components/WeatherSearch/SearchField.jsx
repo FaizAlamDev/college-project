@@ -8,17 +8,27 @@ const api = {
 
 const SearchField = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { data, setData } = useContext(WeatherContext);
+  const { data, setData, error, setError } = useContext(WeatherContext);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!searchValue) return;
-    const response = await fetch(
-      `${api.base}weather?q=${searchValue}&units=metric&APPID=${api.key}`
-    );
-
-    const data = await response.json();
-    setData(data);
+    try {
+      e.preventDefault();
+      if (!searchValue) return;
+      fetch(`${api.base}weather?q=${searchValue}&units=metric&APPID=${api.key}`)
+        .then((res) => {
+          if (!res.ok) {
+            setError(res.statusText);
+            setTimeout(() => {
+              setError("");
+            }, 3000);
+          } else {
+            return res.json();
+          }
+        })
+        .then((res) => setData(res));
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
