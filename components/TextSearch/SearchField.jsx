@@ -24,7 +24,7 @@ const SearchField = () => {
     if (!searchValue) return;
     const response = await fetch(
       encodeURI(
-        `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${searchValue}&gsrlimit=20&prop=pageimages|extracts&exchars=${100}&exintro&explaintext&exlimit=max&format=json&origin=*`
+        `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${searchValue}&gsrlimit=12&prop=pageimages|extracts&exchars=${100}&exintro&explaintext&exlimit=max&format=json&origin=*`
       )
     );
 

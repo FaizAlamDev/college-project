@@ -27,8 +27,8 @@ const Images = () => {
                 className="h-72 w-full object-cover rounded-lg shadow-md"
                 src={data.urls.small}
                 alt={data.alt_description}
-                width="0"
-                height="0"
+                width="300"
+                height="300"
               />
             </Link>
           ))

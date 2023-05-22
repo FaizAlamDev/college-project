@@ -1,10 +1,35 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const Results = ({ results }) => {
   return (
-    <div className="m-5 p-5 border-b-slate-500">
+    <div className="flex flex-col justify-start w-[90vw] m-auto px-4 py-2 text-3xl md:w-[55vw]">
       {results.map((result) => (
-        <div key={result.id} className="w-full h-20 border-red-500">
-          <h4>{result.title}</h4>
-          <p>{result.text}</p>
+        <div
+          key={result.id}
+          className="w-full flex flex-col justify-start px-0 py-4 border-b-2 border-gray-800"
+        >
+          <Link
+            href={`https://en.wikipedia.org/?curid=${result.id}`}
+            target="_blank"
+            className="text-3xl leading-7 mb-2 hover:underline text-cyan-900"
+          >
+            {result.title}
+          </Link>
+          <div className="flex w-full">
+            {result.img ? (
+              <Image
+                src={result.img}
+                alt="Result Image"
+                width="50"
+                height="56"
+                className="mr-2"
+              />
+            ) : null}
+            <p className="text-lg max-h-24 overflow-hidden text-ellipsis md:leading-5">
+              {result.text}
+            </p>
+          </div>
         </div>
       ))}
     </div>
