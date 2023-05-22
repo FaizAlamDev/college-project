@@ -22,11 +22,11 @@ const Results = ({ results }) => {
                 src={result.img}
                 alt="Result Image"
                 width="50"
-                height="56"
-                className="mr-2"
+                height="55"
+                className="mr-2 max-h-20 w-1/3 md:w-24"
               />
             ) : null}
-            <p className="text-lg max-h-24 overflow-hidden text-ellipsis md:leading-5">
+            <p className="text-lg max-h-24 overflow-hidden text-ellipsis md:leading-5 w-2/3">
               {result.text}
             </p>
           </div>

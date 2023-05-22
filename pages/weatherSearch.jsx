@@ -7,10 +7,20 @@ export const WeatherContext = createContext();
 
 export default function WeatherSearch() {
   const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const value = {
+    data,
+    setData,
+    isLoading,
+    setIsLoading,
+    error,
+    setError,
+  };
+
   return (
-    <WeatherContext.Provider value={{ data, setData, error, setError }}>
+    <WeatherContext.Provider value={value}>
       <Jumbutron heading="Weather">
         <SearchField />
       </Jumbutron>

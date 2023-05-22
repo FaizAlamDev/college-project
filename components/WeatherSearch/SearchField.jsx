@@ -8,13 +8,17 @@ const api = {
 
 const SearchField = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { data, setData, error, setError } = useContext(WeatherContext);
+  const { data, setData, setIsLoading, error, setError } =
+    useContext(WeatherContext);
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       if (!searchValue) return;
-      fetch(`${api.base}weather?q=${searchValue}&units=metric&APPID=${api.key}`)
+      setIsLoading(true);
+      fetch(
+        `${api.base}forecast?q=${searchValue}&units=metric&APPID=${api.key}`
+      )
         .then((res) => {
           if (!res.ok) {
             setError(res.statusText);
@@ -28,6 +32,10 @@ const SearchField = () => {
         .then((res) => setData(res));
     } catch (err) {
       setError(err.message);
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
     }
   };
 
@@ -35,7 +43,7 @@ const SearchField = () => {
     <div>
       <form className="flex" onSubmit={handleSubmit}>
         <input
-          className="bg-gray-50 border border-gray-300 text-sm w-full indent-2 p-2.5 outline-none focus:border-blue-500 focus:ring-2 rounded-tl rounded-bl "
+          className="bg-gray-50 border border-gray-300 text-sm w-full indent-2 p-2.5 outline-none focus:border-blue-500 focus:ring-2 rounded-tl rounded-bl ml-2"
           type="search"
           placeholder="Search..."
           value={searchValue}
@@ -44,7 +52,7 @@ const SearchField = () => {
         <button
           type="submit"
           disabled={!searchValue}
-          className="bg-blue-600 px-6 py-2.5 text-white rounded-tr rounded-br focus:rind-2 focus:rind-blue-300 disabled:bg-gray-400"
+          className="bg-blue-600 px-6 py-2.5 text-white rounded-tr rounded-br focus:ring-2 focus:ring-blue-300 disabled:bg-gray-400 mr-2"
         >
           Search
         </button>
