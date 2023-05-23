@@ -44,7 +44,7 @@ const Results = ({ weather }) => {
         <div className="w-full p-4 flex justify-center">
           <div className="flex flex-wrap">
             <div className="w-full px-2">
-              <div className=" text-white relative min-w-0 break-words rounded-lg overflow-hidden shadow-sm mb-4 w-[90vw] bg-gray-600 sm:w-[60vw]">
+              <div className=" text-white relative min-w-0 break-words rounded-lg overflow-hidden shadow-sm mb-4 w-[90vw] bg-sky-800 sm:w-[60vw] sm:text-3xl">
                 <div className="px-6 py-6 relative">
                   <div className="flex mb-4 justify-between items-center">
                     <div>
