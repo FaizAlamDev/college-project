@@ -2,6 +2,7 @@ import Images from "@/components/ImageSearch/Images";
 import Jumbutron from "@/components/Jumbutron";
 import SearchField from "@/components/ImageSearch/SearchField";
 import { createContext, useState } from "react";
+import Head from "next/head";
 
 export const ImageContext = createContext();
 
@@ -23,11 +24,18 @@ export default function ImageSearch() {
   };
 
   return (
-    <ImageContext.Provider value={value}>
-      <Jumbutron heading="Image">
-        <SearchField />
-      </Jumbutron>
-      <Images />
-    </ImageContext.Provider>
+    <>
+      <Head>
+        <title>Image Search</title>
+      </Head>
+      <div style={{ minHeight: "calc(100vh - 3.8rem)" }}>
+        <ImageContext.Provider value={value}>
+          <Jumbutron heading="Image">
+            <SearchField />
+          </Jumbutron>
+          <Images />
+        </ImageContext.Provider>
+      </div>
+    </>
   );
 }

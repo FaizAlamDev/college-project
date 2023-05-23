@@ -12,7 +12,7 @@ const Results = ({ results }) => {
           <Link
             href={`https://en.wikipedia.org/?curid=${result.id}`}
             target="_blank"
-            className="text-3xl leading-7 mb-2 hover:underline text-cyan-900"
+            className="text-3xl leading-7 mb-2 hover:underline text-blue-950"
           >
             {result.title}
           </Link>

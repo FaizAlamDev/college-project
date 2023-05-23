@@ -1,10 +1,14 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <div className="container my-24 px-6 mx-auto">
+      <Head>
+        <title>Search Engines</title>
+      </Head>
+      <div className="container mt-12 px-6 mx-auto">
         <section className="mb-32 text-gray-800 text-center">
           <h2 className="text-5xl font-bold mb-12 pb-4 text-center">
             Search Engines

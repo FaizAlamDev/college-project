@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -11,13 +12,15 @@ export default function Document() {
       </Head>
       <body
         style={{
-          backgroundImage: "url('/stacked-waves-haikei.svg')",
+          backgroundImage: "url('/background.svg')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
+          minHeight: "calc(100vh - 3rem)",
         }}
       >
         <Main />
         <NextScript />
+        <Footer />
       </body>
     </Html>
   );
