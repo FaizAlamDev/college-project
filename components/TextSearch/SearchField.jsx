@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 
 const SearchField = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { data, setData } = useContext(TextContext);
+  const { setData } = useContext(TextContext);
 
   const processWikiResults = (results) => {
     const resultArray = [];

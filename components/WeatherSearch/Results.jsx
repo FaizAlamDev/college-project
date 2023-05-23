@@ -1,28 +1,37 @@
 import { WeatherContext } from "@/pages/weatherSearch";
 import { useContext } from "react";
-import Skeleton from "../ImageSearch/Skeleton";
 import Spinner from "./Spinner";
 
 const Results = ({ weather }) => {
   function getDayName(index) {
-    return new Date(weather.list[index].dt * 1000)
-      .toLocaleString("en-us", { weekday: "long" })
-      .substring(0, 3)
-      .toUpperCase();
+    const result = new Date(weather.list[index].dt * 1000).getHours();
+    if (Number(result) > 12) {
+      return (
+        <>
+          {Number(result) - 12}
+          <span className="text-xs">PM</span>
+        </>
+      );
+    }
+    return (
+      <>
+        {Number(result)}
+        <span className="text-xs">AM</span>
+      </>
+    );
   }
 
   function displayIcon(condition) {
-    switch (condition) {
-      case "Rain": {
-        return <span class="material-symbols-outlined">rainy</span>;
-      }
-      case "Clouds": {
-        return <span class="material-symbols-outlined">cloudy</span>;
-      }
-      case "Clear": {
-        return <span class="material-symbols-outlined">sunny</span>;
-      }
-    }
+    const res =
+      condition === "Rain" ? (
+        <span className="material-symbols-outlined">rainy</span>
+      ) : condition === "Clouds" ? (
+        <span className="material-symbols-outlined">cloudy</span>
+      ) : condition === "Clear" ? (
+        <span className="material-symbols-outlined">sunny</span>
+      ) : null;
+
+    return res;
   }
 
   const { isLoading } = useContext(WeatherContext);
@@ -59,42 +68,42 @@ const Results = ({ weather }) => {
                 <div className="px-6 py-3 relative">
                   <div className="text-center justify-between items-center flex">
                     <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(8)}</span>
-                      {displayIcon(weather.list[8].weather[0].main)}
+                      <span className="block my-1">{getDayName(1)}</span>
+                      {displayIcon(weather.list[1].weather[0].main)}
                       <span className="block my-1">
-                        {Math.round(weather.list[8].main.temp)}&deg;
+                        {Math.round(weather.list[1].main.temp)}&deg;
                       </span>
                     </div>
 
                     <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(16)}</span>
-                      {displayIcon(weather.list[16].weather[0].main)}
+                      <span className="block my-1">{getDayName(2)}</span>
+                      {displayIcon(weather.list[2].weather[0].main)}
                       <span className="block my-1">
-                        {Math.round(weather.list[24].main.temp)}&deg;
+                        {Math.round(weather.list[2].main.temp)}&deg;
                       </span>
                     </div>
 
                     <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(24)}</span>
-                      {displayIcon(weather.list[24].weather[0].main)}
+                      <span className="block my-1">{getDayName(3)}</span>
+                      {displayIcon(weather.list[3].weather[0].main)}
                       <span className="block my-1">
-                        {Math.round(weather.list[24].main.temp)}&deg;
+                        {Math.round(weather.list[3].main.temp)}&deg;
                       </span>
                     </div>
 
                     <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(32)}</span>
-                      {displayIcon(weather.list[32].weather[0].main)}
+                      <span className="block my-1">{getDayName(4)}</span>
+                      {displayIcon(weather.list[4].weather[0].main)}
                       <span className="block my-1">
-                        {Math.round(weather.list[32].main.temp)}&deg;
+                        {Math.round(weather.list[4].main.temp)}&deg;
                       </span>
                     </div>
 
                     <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(39)}</span>
-                      {displayIcon(weather.list[39].weather[0].main)}
+                      <span className="block my-1">{getDayName(5)}</span>
+                      {displayIcon(weather.list[5].weather[0].main)}
                       <span className="block my-1">
-                        {Math.round(weather.list[39].main.temp)}&deg;
+                        {Math.round(weather.list[5].main.temp)}&deg;
                       </span>
                     </div>
                   </div>

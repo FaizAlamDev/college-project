@@ -8,8 +8,7 @@ const api = {
 
 const SearchField = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { data, setData, setIsLoading, error, setError } =
-    useContext(WeatherContext);
+  const { setData, setIsLoading, setError } = useContext(WeatherContext);
 
   const handleSubmit = async (e) => {
     try {
@@ -45,7 +44,7 @@ const SearchField = () => {
         <input
           className="bg-gray-50 border border-gray-300 text-sm w-full indent-2 p-2.5 outline-none focus:border-blue-500 focus:ring-2 rounded-tl rounded-bl ml-2"
           type="search"
-          placeholder="Search..."
+          placeholder="Enter City Name"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
