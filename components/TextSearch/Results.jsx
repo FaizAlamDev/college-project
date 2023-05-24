@@ -26,7 +26,7 @@ const Results = ({ results }) => {
                 className="mr-2 max-h-20 w-1/3 md:w-24"
               />
             ) : null}
-            <p className="text-lg max-h-24 text-clip md:leading-5 w-2/3">
+            <p className="text-base sm:text-lg max-h-24 text-ellipsis overflow-hidden md:leading-5 w-2/3">
               {result.text}
             </p>
           </div>
