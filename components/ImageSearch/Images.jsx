@@ -9,10 +9,10 @@ const Images = () => {
 
   return (
     <>
-      <h1 className="text-center mt-6 underline text-2xl">
+      <h1 className="mt-6 text-center text-2xl underline">
         {searchImage !== "" ? <div>Results for {searchImage}</div> : ""}
       </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10 max-w-7xl mx-auto px-4">
+      <div className="mx-auto my-10 grid max-w-7xl gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {isLoading ? (
           <Skeleton item={10} />
         ) : (
@@ -24,7 +24,7 @@ const Images = () => {
               rel="noreferrer"
             >
               <Image
-                className="h-72 w-full object-cover rounded-lg shadow-md"
+                className="h-72 w-full rounded-lg object-cover shadow-md"
                 src={data.urls.small}
                 alt={data.alt_description}
                 width="300"

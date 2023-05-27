@@ -41,14 +41,14 @@ const Results = ({ weather }) => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="w-full p-4 flex justify-center">
+        <div className="flex w-full justify-center p-4">
           <div className="flex flex-wrap">
             <div className="w-full px-2">
-              <div className=" text-white relative min-w-0 break-words rounded-lg overflow-hidden shadow-sm mb-4 w-[90vw] bg-sky-800 sm:w-[60vw] sm:text-3xl">
-                <div className="px-6 py-6 relative">
-                  <div className="flex mb-4 justify-between items-center">
+              <div className=" relative mb-4 w-[90vw] min-w-0 overflow-hidden break-words rounded-lg bg-sky-800 text-white shadow-sm sm:w-[60vw] sm:text-3xl">
+                <div className="relative px-6 py-6">
+                  <div className="mb-4 flex items-center justify-between">
                     <div>
-                      <h5 className="mb-1 font-medium text-2xl">
+                      <h5 className="mb-1 text-2xl font-medium">
                         {weather.city.name}, {weather.city.country}
                       </h5>
                       <h6 className="mb-0">
@@ -57,7 +57,7 @@ const Results = ({ weather }) => {
                       <small>{weather.list[0].weather[0].main}</small>
                     </div>
                     <div className="text-right">
-                      <h3 className="font-bold text-4xl mb-0">
+                      <h3 className="mb-0 text-4xl font-bold">
                         <span>
                           {Math.round(weather.list[0].main.temp)}&deg;C
                         </span>
@@ -65,44 +65,44 @@ const Results = ({ weather }) => {
                     </div>
                   </div>
                 </div>
-                <div className="px-6 py-3 relative">
-                  <div className="text-center justify-between items-center flex">
-                    <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(1)}</span>
+                <div className="relative px-6 py-3">
+                  <div className="flex items-center justify-between text-center">
+                    <div className="mb-0 flex flex-col items-center justify-center text-center">
+                      <span className="my-1 block">{getDayName(1)}</span>
                       {displayIcon(weather.list[1].weather[0].main)}
-                      <span className="block my-1">
+                      <span className="my-1 block">
                         {Math.round(weather.list[1].main.temp)}&deg;
                       </span>
                     </div>
 
-                    <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(2)}</span>
+                    <div className="mb-0 flex flex-col items-center justify-center text-center">
+                      <span className="my-1 block">{getDayName(2)}</span>
                       {displayIcon(weather.list[2].weather[0].main)}
-                      <span className="block my-1">
+                      <span className="my-1 block">
                         {Math.round(weather.list[2].main.temp)}&deg;
                       </span>
                     </div>
 
-                    <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(3)}</span>
+                    <div className="mb-0 flex flex-col items-center justify-center text-center">
+                      <span className="my-1 block">{getDayName(3)}</span>
                       {displayIcon(weather.list[3].weather[0].main)}
-                      <span className="block my-1">
+                      <span className="my-1 block">
                         {Math.round(weather.list[3].main.temp)}&deg;
                       </span>
                     </div>
 
-                    <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(4)}</span>
+                    <div className="mb-0 flex flex-col items-center justify-center text-center">
+                      <span className="my-1 block">{getDayName(4)}</span>
                       {displayIcon(weather.list[4].weather[0].main)}
-                      <span className="block my-1">
+                      <span className="my-1 block">
                         {Math.round(weather.list[4].main.temp)}&deg;
                       </span>
                     </div>
 
-                    <div className="text-center mb-0 flex items-center justify-center flex-col">
-                      <span className="block my-1">{getDayName(5)}</span>
+                    <div className="mb-0 flex flex-col items-center justify-center text-center">
+                      <span className="my-1 block">{getDayName(5)}</span>
                       {displayIcon(weather.list[5].weather[0].main)}
-                      <span className="block my-1">
+                      <span className="my-1 block">
                         {Math.round(weather.list[5].main.temp)}&deg;
                       </span>
                     </div>

@@ -1,7 +1,7 @@
 const Skeleton = ({ item }) => {
   return [...Array(item).keys()].map((_, key) => (
     <div key={key} className="animate-pulse">
-      <div className="bg-gray-300 rounded-lg h-72"></div>
+      <div className="h-72 rounded-lg bg-gray-300"></div>
     </div>
   ));
 };

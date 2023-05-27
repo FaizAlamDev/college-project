@@ -42,7 +42,7 @@ const SearchField = () => {
     <div>
       <form className="flex" onSubmit={handleSubmit}>
         <input
-          className="bg-gray-50 border border-gray-300 text-sm w-full indent-2 p-2.5 outline-none focus:border-blue-500 focus:ring-2 rounded-tl rounded-bl ml-2"
+          className="ml-2 w-full rounded-bl rounded-tl border border-gray-300 bg-gray-50 p-2.5 indent-2 text-sm outline-none focus:border-blue-500 focus:ring-2"
           type="search"
           placeholder="Enter City Name"
           value={searchValue}
@@ -51,7 +51,7 @@ const SearchField = () => {
         <button
           type="submit"
           disabled={!searchValue}
-          className="bg-blue-600 px-6 py-2.5 text-white rounded-tr rounded-br focus:ring-2 focus:ring-blue-300 disabled:bg-gray-400 mr-2"
+          className="mr-2 rounded-br rounded-tr bg-blue-600 px-6 py-2.5 text-white focus:ring-2 focus:ring-blue-300 disabled:bg-gray-400"
         >
           Search
         </button>

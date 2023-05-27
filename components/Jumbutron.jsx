@@ -1,8 +1,8 @@
 const Jumbutron = ({ heading, children }) => {
   return (
-    <div className="bg-gray-800 flex items-center py-10">
-      <div className="max-w-md mx-auto w-full">
-        <h1 className="text-white text-center text-2xl font-bold mb-5">
+    <div className="flex items-center bg-gray-800 py-10">
+      <div className="mx-auto w-full max-w-md">
+        <h1 className="mb-5 text-center text-2xl font-bold text-white">
           Find {heading}
         </h1>
         {children}

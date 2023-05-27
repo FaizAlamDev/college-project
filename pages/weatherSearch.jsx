@@ -31,11 +31,11 @@ export default function WeatherSearch() {
             <SearchField />
           </Jumbutron>
           {error ? (
-            <div className="w-1/2 mt-4 m-auto">
-              <div className="bg-red-500 text-2xl text-white font-bold rounded-t px-4 py-2 text-center">
+            <div className="m-auto mt-4 w-1/2">
+              <div className="rounded-t bg-red-500 px-4 py-2 text-center text-2xl font-bold text-white">
                 Error
               </div>
-              <div className="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700 text-center">
+              <div className="rounded-b border border-t-0 border-red-400 bg-red-100 px-4 py-3 text-center text-red-700">
                 <p>City Name Not Found</p>
               </div>
             </div>
